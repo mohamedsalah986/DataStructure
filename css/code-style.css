@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #f5f7fa;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+header {
+    background: #4ecdc4;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+main {
+    padding: 20px;
+}
+
+pre {
+    background: #282a36;
+    color: #f8f8f2;
+    padding: 20px;
+    border-radius: 8px;
+    overflow: auto;
+}
+
+code {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 1em;
+}
+
+/* Add media query for responsiveness */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+    }
+}

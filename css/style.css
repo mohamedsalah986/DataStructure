@@ -10,7 +10,21 @@ body {
     align-items: center;
     height: 100vh;
 }
+.codes{
 
+    display: flex;
+    flex-direction: column;
+
+}
+.codes a{
+    display: block;
+    color: white;
+    text-decoration: none;
+}
+.codes a:hover{
+
+   color:  #ffe66d
+}
 .container {
     width: 90%;
     max-width: 900px;
@@ -20,9 +34,7 @@ body {
     overflow: hidden;
     transition: transform 0.3s ease-in-out;
 }
-header{
-    
-}
+
 main{
     margin-top: 300px;
 }
