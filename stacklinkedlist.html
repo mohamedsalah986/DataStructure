@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack using linked list Code</title>
+    <link rel="stylesheet" href="css/code-style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Stack using linked list Code</h1>
+            <a class="return" href="index.html">Go back</a>
+
+        </header>
+        <main>
+            <pre><code class="language-java">
+public class Stack {
+
+    Node top;
+    
+    public Stack() {
+        top = null;
+    }
+    
+    public boolean isEmpty() {
+        return top == null;
+    }
+    
+    public void push(int data) {
+        Node newnode = new Node(data);
+        
+        if (isEmpty()) {
+            top = newnode;
+        } else {
+            newnode.next = top;
+            top = newnode;    
+        }
+    }
+    
+    public int pop() {
+        if (isEmpty()) {
+            System.out.println("Stack is empty");
+            return -1;
+        }
+        
+        int popval = top.data;
+        top = top.next;
+        return popval;
+    }
+    
+    public int peek() {
+        return top.data;
+    }
+    
+    public void display() {
+        Node current = top;
+        
+        if (isEmpty()) {
+            System.out.println("Stack is empty");
+            return;
+        }
+        
+        while (current != null) {
+            System.out.println(current.data);
+            current = current.next;
+        }
+    }
+}
+            </code></pre>
+        </main>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-java.min.js"></script>
+</body>
+</html>

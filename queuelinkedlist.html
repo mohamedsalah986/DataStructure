@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linked List Queue Code</title>
+    <link rel="stylesheet" href="css/code-style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Linked List Queue Code</h1>
+            <a class="return" href="index.html">Go back</a>
+
+        </header>
+        <main>
+            <pre><code class="language-java">
+class Node {
+    int data;
+    Node next;
+
+    Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+class LinkedListQueue {
+    private static Node front;
+    private Node rear;
+
+    LinkedListQueue() {
+        this.front = this.rear = null;
+    }
+
+    public boolean isEmpty() {
+        return front == null;
+    }
+
+    public void enqueue(int data) {
+        Node newNode = new Node(data);
+        if (isEmpty()) {
+            front = rear = newNode;
+        } else {
+            rear.next = newNode;
+            rear = newNode;
+        }
+        System.out.println(data + " enqueued to queue");
+    }
+
+    public int dequeue() {
+        if (isEmpty()) {
+            System.out.println("Queue is empty");
+            return -1;
+        }
+        int dequeued = front.data;
+        front = front.next;
+        if (front == null) {
+            rear = null;
+        }
+        return dequeued;
+    }
+
+    public int peek() {
+        if (isEmpty()) {
+            System.out.println("Queue is empty");
+            return -1;
+        }
+        return front.data;
+    }
+
+    public void display() {
+        Node current = front;
+        if (isEmpty()) {
+            System.out.println("Queue is empty");
+            return;
+        }
+        System.out.println("Elements of queue:");
+        while (current != null) {
+            System.out.println(current.data);
+            current = current.next;
+        }
+    }
+}
+
+
+            </code></pre>
+        </main>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-java.min.js"></script>
+</body>
+</html>
